@@ -6,6 +6,7 @@ use App\Http\Requests\UserIdRequest;
 use App\Models\Comment;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
 class UserController extends Controller
@@ -78,5 +79,10 @@ class UserController extends Controller
             'queryBuilder' => $comments,
             'rawQuery' => $commentsRaw
         ]);
+    }
+
+    public function startSeed()
+    {
+        Artisan::call('db:seed');
     }
 }

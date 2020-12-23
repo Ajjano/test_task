@@ -20,3 +20,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/get-users/', 'App\Http\Controllers\UserController@getActiveUsers');
 Route::get('/get-comments/{user_id}', 'App\Http\Controllers\UserController@getUsersComments');
+Route::get('/seeder', 'App\Http\Controllers\UserController@startSeed');
